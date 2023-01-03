@@ -48,8 +48,10 @@ class Clock:
             if sleep_time:
                 time.sleep(sleep_time)
             # Busy wait until the target_time is reached.
-            while (drift_time := time.perf_counter() - target_time) < 0:
-                pass
+            while True:
+                drift_time = time.perf_counter() - target_time
+                if drift_time >= 0:
+                    break
             self.__drift_time = min(drift_time, desired_framerate)
 
         # Get the delta time.
