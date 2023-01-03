@@ -12,7 +12,7 @@ sys.path.append("..")
 from tcod.clock import __version__  # noqa
 
 project = "tcod-clock"
-copyright = "2022, Kyle Benesch"
+copyright = "2023, Kyle Benesch"
 author = "Kyle Benesch"
 release = __version__
 

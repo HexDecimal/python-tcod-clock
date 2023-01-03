@@ -3,10 +3,9 @@ from __future__ import annotations
 
 import statistics
 import time
-from collections import deque
 from typing import Deque, Optional
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 
 class Clock:
@@ -16,6 +15,15 @@ class Clock:
     You can use the fps properties to track the performance of an application.
 
     Time is sampled with :any:`time.perf_counter`.
+
+    Example::
+
+        import tcod.clock
+
+        clock = tcod.clock.Clock()
+        while True:
+            clock.sync(1 / 30)  # This loop will run at 30 FPS until interrupted.
+
     """
 
     max_samples = 64
@@ -23,9 +31,9 @@ class Clock:
 
     def __init__(self) -> None:
         self.last_time = time.perf_counter()
-        "Last time this was synced."
-        self.time_samples: Deque[float] = deque()
-        "Delta time samples."
+        "Last time this Clock was synced."
+        self.time_samples = Deque[float]()
+        "A recent collection of delta-time samples."
         self.__drift_time = 0.0
         "Tracks how much the last frame was overshot."
 

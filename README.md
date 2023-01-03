@@ -5,20 +5,20 @@
 [![Documentation Status](https://readthedocs.org/projects/python-tcod-clock/badge/?version=latest)](https://python-tcod-clock.readthedocs.io)
 [![codecov](https://codecov.io/gh/HexDecimal/python-tcod-clock/branch/main/graph/badge.svg?token=UP161WEo0s)](https://codecov.io/gh/HexDecimal/python-tcod-clock)
 
-Libtcod used to include a global framerate limiter which was later deprecated as libtcod was refactored.
-This module was crated as a replacement for that feature.
+Libtcod used to include a global framerate limiter which was eventually deprecated.
+This module was created as a replacement for that feature.
 
 ```py
 import time
 
-from tcod.clock import Clock
+import tcod.clock
 
 
 FPS = 30
 
 end_time = time.time() + 3  # Loop for 3 seconds.
 
-clock = Clock()
+clock = tcod.clock.Clock()
 while time.time() < end_time:
     clock.sync(1 / FPS)  # This loop will run at 30 FPS until interrupted.
 

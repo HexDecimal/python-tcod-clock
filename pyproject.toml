@@ -23,7 +23,7 @@ requires-python = ">=3.8"
 name = "tcod.clock"
 
 [project.urls]
-Home = "https://github.com/HexDecimal"
+Home = "https://github.com/HexDecimal/python-tcod-clock"
 Changelog = "https://github.com/HexDecimal/python-tcod-clock/blob/main/CHANGELOG.md"
 Documentation = "https://python-tcod-clock.readthedocs.io"
 Source = "https://github.com/HexDecimal/python-tcod-clock"
