@@ -1,0 +1,34 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Package
+
+on:
+  push:
+  pull_request:
+    types: [opened, reopened]
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        name: Setup Python 3.11
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-python@v4
+        name: Setup Python 3.8
+        with:
+          python-version: "3.8"
+          cache: "pip" # caching pip dependencies
+      - name: Install tox
+        run: pip install tox
+      - name: Run tests
+        run: tox run
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
