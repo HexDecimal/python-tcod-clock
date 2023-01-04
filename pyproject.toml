@@ -19,6 +19,9 @@ classifiers = [
 dynamic = ["version", "description"]
 requires-python = ">=3.8"
 
+[project.optional-dependencies]
+test = ["pytest>=7.2.0", "pytest-cov", "mypy>=0.991", "tcod>=14.0.0"]
+
 [tool.flit.module]
 name = "tcod.clock"
 
@@ -39,6 +42,8 @@ profile = "black"
 skip_gitignore = true
 
 [tool.mypy] # https://mypy.readthedocs.io/en/stable/config_file.html
+files = "**/*.py"
+explicit_package_bases = true
 python_version = "3.8"
 warn_unused_configs = true
 disallow_any_generics = true
