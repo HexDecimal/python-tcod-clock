@@ -1,16 +1,18 @@
 #!/usr/bin/env python
+"""Example script for tcod.clock."""
 from __future__ import annotations
 
 import time
 
-import tcod
+import tcod.context
+import tcod.event
 from tcod.clock import Clock
 
 WIDTH, HEIGHT = 720, 480
 
 
 def main() -> None:
-    """Example program for Clock."""
+    """Demonstrate the synchronization of the Clock class."""
     # vsync is False in this example, but you'll want it to be True unless you
     # need to benchmark or set framerates above 60 FPS.
     with tcod.context.new(width=WIDTH, height=HEIGHT, vsync=False) as context:
@@ -43,7 +45,7 @@ def main() -> None:
                 context.convert_event(event)  # Set tile coordinates for event.
                 if isinstance(event, tcod.event.Quit):
                     raise SystemExit()
-                elif isinstance(event, tcod.event.MouseWheel):
+                if isinstance(event, tcod.event.MouseWheel):
                     desired_fps = max(1, desired_fps + event.y)
 
 

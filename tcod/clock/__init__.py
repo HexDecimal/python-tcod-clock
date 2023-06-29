@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import statistics
 import time
-from typing import Deque, Optional
+from typing import Deque
 
 __version__ = "1.0.1"
 
@@ -30,6 +30,7 @@ class Clock:
     """Number of framerate samples to log.  This attribute be set in the class or instance."""
 
     def __init__(self) -> None:
+        """Initialize the clock at the current time."""
         self.last_time = time.perf_counter()
         "Last time this Clock was synced."
         self.time_samples = Deque[float]()
@@ -37,7 +38,7 @@ class Clock:
         self.__drift_time = 0.0
         "Tracks how much the last frame was overshot."
 
-    def sync(self, desired_framerate: Optional[float] = None) -> float:
+    def sync(self, desired_framerate: float | None = None) -> float:
         """Sync to a given framerate and return the delta time.
 
         Args:
