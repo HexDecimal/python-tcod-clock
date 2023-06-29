@@ -16,6 +16,7 @@
         "codecov",
         "dtype",
         "framerates",
+        "furo",
         "genindex",
         "intersphinx",
         "isort",
