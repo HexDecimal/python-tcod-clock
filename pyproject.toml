@@ -40,6 +40,7 @@ py_version = "38"
 line_length = 120
 profile = "black"
 skip_gitignore = true
+known_first_party = ["tcod"]
 
 [tool.mypy] # https://mypy.readthedocs.io/en/stable/config_file.html
 files = "**/*.py"
@@ -109,3 +110,6 @@ line-length = 120
 [tool.ruff.pydocstyle]
 # Use Google-style docstrings.
 convention = "google"
+
+[tool.ruff.isort]
+known-first-party = ["tcod"]
