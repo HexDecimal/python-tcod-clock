@@ -104,7 +104,6 @@ ignore = [
     "ANN101", # missing-type-self
     "ANN102", # missing-type-cls
 ]
-extend-exclude = ["libtcod"] # Ignore submodule
 line-length = 120
 
 [tool.ruff.pydocstyle]
