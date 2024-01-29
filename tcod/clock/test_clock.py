@@ -1,4 +1,5 @@
 """Tests for tcod.clock."""
+
 from __future__ import annotations
 
 import tcod.clock

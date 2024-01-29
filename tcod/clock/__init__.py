@@ -1,4 +1,5 @@
 """Track and limit framerate of a program."""
+
 from __future__ import annotations
 
 import statistics
