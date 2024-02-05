@@ -9,7 +9,7 @@ import sys
 
 sys.path.append("..")
 
-from tcod.clock import __version__  # noqa
+from tcod.clock import __version__
 
 project = "tcod-clock"
 copyright = "2023, Kyle Benesch"
