@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import statistics
 import time
-from typing import Deque
+from collections import deque
 
 __version__ = "1.0.1"
 
@@ -34,7 +34,7 @@ class Clock:
         """Initialize the clock at the current time."""
         self.last_time = time.perf_counter()
         "Last time this Clock was synced."
-        self.time_samples = Deque[float]()
+        self.time_samples: deque[float] = deque()
         "A recent collection of delta-time samples."
         self.__drift_time = 0.0
         "Tracks how much the last frame was overshot."

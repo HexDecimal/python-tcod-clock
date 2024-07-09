@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """Example script for tcod.clock."""
+
 from __future__ import annotations
 
 import time
@@ -44,7 +45,7 @@ def main() -> None:
             for event in tcod.event.get():
                 context.convert_event(event)  # Set tile coordinates for event.
                 if isinstance(event, tcod.event.Quit):
-                    raise SystemExit()
+                    raise SystemExit
                 if isinstance(event, tcod.event.MouseWheel):
                     desired_fps = max(1, desired_fps + event.y)
 

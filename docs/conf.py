@@ -1,10 +1,11 @@
-"""Configuration file for the Sphinx documentation builder."""
-
+"""Configuration file for the Sphinx documentation builder."""  # noqa: INP001
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+from __future__ import annotations
+
 import sys
 
 sys.path.append("..")
@@ -12,7 +13,7 @@ sys.path.append("..")
 from tcod.clock import __version__
 
 project = "tcod-clock"
-copyright = "2023, Kyle Benesch"
+copyright = "2023, Kyle Benesch"  # noqa: A001
 author = "Kyle Benesch"
 release = __version__
 version = ".".join(release.split(".")[:2])
@@ -35,7 +36,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "furo"
-# html_static_path = ["_static"]
+# html_static_path = ["_static"]  # noqa: ERA001
 
 
 intersphinx_mapping = {
