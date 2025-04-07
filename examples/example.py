@@ -28,7 +28,7 @@ def main() -> None:
             console.print(
                 1,
                 1,
-                f"Current time:{(time.perf_counter()-begin_time) * 1000:8.2f}ms"
+                f"Current time:{(time.perf_counter() - begin_time) * 1000:8.2f}ms"
                 f"\nDelta time:{delta_time * 1000:8.2f}ms"
                 f"\nDesired FPS:{desired_fps:3d} (use scroll wheel to adjust)"
                 f"\n  last:{clock.last_fps:.2f} fps"
